@@ -17,14 +17,21 @@ public class ConcertTest {
         log.log(Level.INFO, "Now it is time to insert details!");
         System.out.println("\n \n \n");
         List<Person> band1Person = new ArrayList<>();
+        List<MusicInstrument> musicInstruments1= new ArrayList<>();
         Name name1 = new Name("Arzu", "Kilic");
         Person person1 = new Person(name1, "903847574894", 21);
         Name name2 = new Name("Beyza", "Sonmez");
         Person person2 = new Person(name2, "9038574894", 20);
         Name bandName = new Name("Turkai", "Murda");
+        Instrument instrument1=new Instrument("guitar");
+        MusicInstrument musicInstrument1=new MusicInstrument(instrument1, "classical");
+        Instrument instrument2=new Instrument("piano");
+        MusicInstrument musicInstrument2=new MusicInstrument(instrument2, "classical");
         band1Person.add(person1);
         band1Person.add(person2);
-        Band band1 = new Band(bandName,band1Person , "Turkey");
+        musicInstruments1.add(musicInstrument1);
+        musicInstruments1.add(musicInstrument2);
+        Band band1 = new Band(bandName,band1Person , "Turkey", musicInstruments1);
         Company company1 = new Company("FF", "Japonska LTD");
         Concert concert1 = new Concert("FF 12",LocalDate.of(2002, 8, 1), "FF", band1, company1);
         System.out.println("CONCERT 1 INFORMATION \n");
@@ -58,5 +65,10 @@ public class ConcertTest {
         }
         concert1.concertStart();
         concert2.concertStop();
+
+        List<Organization> organizations = new ArrayList<>();
+        organizations.add(new Organization(concert1));
+        organizations.add(new Organization(concert2));
+        System.out.println(organizations);
     }
 }

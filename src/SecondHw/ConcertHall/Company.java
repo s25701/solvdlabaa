@@ -3,8 +3,8 @@ package SecondHw.ConcertHall;
 import SecondHw.ConcertHall.Exception.InvalidCompanyException;
 
 public class Company extends ManyThanks{
-    public static String companyId;
-    public static String companyName;
+    private static String companyId;
+    private static String companyName;
 
     public Company(String companyId, String companyName) {
         this.setCompanyId(companyId);

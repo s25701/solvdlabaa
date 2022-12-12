@@ -1,9 +1,9 @@
 package SecondHw.ConcertHall;
 
 public class Person extends ManyThanks{
-    public Name name;
-    public String phoneNumber;
-    public int age;
+    private Name name;
+    private String phoneNumber;
+    private int age;
 
     public Person(Name name, String phoneNumber, int age) {
         this.name = name;

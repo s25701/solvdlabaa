@@ -2,6 +2,8 @@ package SecondHw.ConcertHall;
 
 import SecondHw.ConcertHall.Exception.ConcertDateException;
 import SecondHw.ConcertHall.Exception.TheConcertIsPostponedException;
+
+import java.lang.instrument.Instrumentation;
 import java.util.*;
 import java.time.LocalDate;
 import java.util.logging.Logger;
@@ -91,14 +93,21 @@ public class Concert implements IConcertStartStop {
     @Override
     public void concertStart() throws Exception {
         List<Person> band1Person = new ArrayList<>();
+        List<MusicInstrument> musicInstruments1= new ArrayList<>();
         Name name1 = new Name("Arzu", "Kilic");
         Person person1 = new Person(name1, "903847574894", 21);
         Name name2 = new Name("Beyza", "Sonmez");
         Person person2 = new Person(name2, "9038574894", 20);
         Name bandName = new Name("Turkai", "Murda");
+        Instrument instrument1=new Instrument("guitar");
+        MusicInstrument musicInstrument1=new MusicInstrument(instrument1, "classical");
+        Instrument instrument2=new Instrument("piano");
+        MusicInstrument musicInstrument2=new MusicInstrument(instrument2, "classical");
         band1Person.add(person1);
         band1Person.add(person2);
-        Band band1 = new Band(bandName, band1Person, "Turkai");
+        musicInstruments1.add(musicInstrument1);
+        musicInstruments1.add(musicInstrument2);
+        Band band1 = new Band(bandName, band1Person, "Turkai", musicInstruments1);
         Company company1 = new Company("FF", "Japonska LTD");
         Concert concert1 = new Concert("FF 12", LocalDate.of(2002, 8, 1), "FF", band1, company1);
         int b = (LocalDate.now().compareTo(concert1.getConcertDate()));
@@ -116,14 +125,21 @@ public class Concert implements IConcertStartStop {
 
         try {
             List<Person> band1Person = new ArrayList<>();
+            List<MusicInstrument> musicInstruments1= new ArrayList<>();
             Name name1 = new Name("Arzu", "Kilic");
             Person person1 = new Person(name1, "903847574894", 21);
             Name name2 = new Name("Beyza", "Sonmez");
             Person person2 = new Person(name2, "9038574894", 20);
             Name bandName = new Name("Turkai", "Murda");
+            Instrument instrument1=new Instrument("guitar");
+            MusicInstrument musicInstrument1=new MusicInstrument(instrument1, "classical");
+            Instrument instrument2=new Instrument("piano");
+            MusicInstrument musicInstrument2=new MusicInstrument(instrument2, "classical");
             band1Person.add(person1);
             band1Person.add(person2);
-            Band band1 = new Band(bandName, band1Person, "Turkai");
+            musicInstruments1.add(musicInstrument1);
+            musicInstruments1.add(musicInstrument2);
+            Band band1 = new Band(bandName, band1Person, "Turkai", musicInstruments1);
             Company company1 = new Company("FF", "Japonska LTD");
             Concert concert2 = new Concert("FF 23", LocalDate.of(2003, 7, 1), "Kb", band1, company1);
             int b = (LocalDate.now().compareTo(concert2.getConcertDate()));

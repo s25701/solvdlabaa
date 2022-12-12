@@ -1,8 +1,8 @@
 package SecondHw.ConcertHall;
 
 final public class Name {
-    public String firstName;
-    public String lastName;
+    private String firstName;
+    private String lastName;
 
     public Name(String firstName, String lastName) {
         this.firstName = firstName;
