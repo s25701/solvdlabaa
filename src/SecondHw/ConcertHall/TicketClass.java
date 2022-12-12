@@ -9,5 +9,4 @@ public enum TicketClass {
     private int price;
     TicketClass(int price){this.price = price;}
     public int getPrice(){return price;}
-
 }
